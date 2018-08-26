@@ -1,5 +1,6 @@
 package com.app.shiroweb.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Date;
 import java.util.HashSet;
@@ -10,9 +11,9 @@ import java.util.Set;
  * createAt: 2018/8/26 下午4:11
  * describe:
  **/
-@Entity
 public class User {
     private Long uid;   //用户id
+
     private String username; //登录名，不可改，唯一
     private String nickname; //昵称，可改，唯一
     private String password; //已加密的登录密码
@@ -97,4 +98,18 @@ public class User {
         this.permissions = permissions;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", username='" + username + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", roles=" + roles +
+                ", permissions=" + permissions +
+                '}';
+    }
 }
